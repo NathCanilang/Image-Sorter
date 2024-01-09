@@ -1,5 +1,4 @@
-#include "MainDeclaration.h"
-
+#include "Header.h"
 
 //all images are stored in a folder
 //once the said folder is selected 
@@ -53,6 +52,7 @@ int main() {
 	std::cout << "Please select the directory from the list above that you want to sort." << std::endl;
 	int directoryIndex;
 	std::cin >> directoryIndex;
+	//std::string selectedDirectory = directories[directoryIndex - 1];
 	std::string selectedDirectory = directories[directoryIndex - 1];
 
 	//presumablly na dito ka magsisimula ng recursion call dapat ang ipapasa na parameter yung user input
@@ -69,7 +69,7 @@ int main() {
 
 	switch (option) {
 	case 1: {
-
+		//need to puch to the stack and do recursion and print all the subdirectories
 		std::cout << "Subdirectories of " << selectedDirectory << ":\n";
 		for (const auto& entry : std::filesystem::directory_iterator(selectedDirectory)) {
 			if (std::filesystem::is_directory(entry)) {
@@ -79,14 +79,14 @@ int main() {
 		break;
 	}
 	case 2: {
-		//tawagin mo na yun method mismo
+		//tawagin mo na yun method mismo at kunin na yung full file path 
 		std::cout << "You have selected the directory: " << selectedDirectory << "\n";
 
 		break;
 	}
 	case 3: {
 		std::cout << "Going back to partition selection...\n";
-		//need fucking stack DSA
+		//need to pop the last/current directory and go there
 		break;
 	}
 	default: {

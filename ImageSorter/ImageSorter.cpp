@@ -1,4 +1,4 @@
-#include "MainDeclaration.h"
+#include "Header.h"
 
 void imageSorter(const std::string& IMAGE_DIRECTORY) {
     std::string sortedImageDirectory = "A:\\Sorted Images";

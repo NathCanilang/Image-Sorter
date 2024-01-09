@@ -1,7 +1,17 @@
-#include "Main.h"
+#include "MainDeclaration.h"
+
+
+//all images are stored in a folder
+//once the said folder is selected 
+//iterate all the files and look for extensions of the files 
+//separate them based on their file extensions on a separate folder
+
+//New entry
+/* the user will give the folder that they want to be sorted
+but the file path of the sorted images is fixed*/
 
 int main() {
-	Main myMethod;
+
 	/*std::string testPath1 = "A:\Screenshots";
 	std::string testPath2 = "A:\Sorted Images";
 	myMethod.imageSorter(testPath1);
@@ -46,13 +56,7 @@ int main() {
 	std::string selectedDirectory = directories[directoryIndex - 1];
 
 	//presumablly na dito ka magsisimula ng recursion call dapat ang ipapasa na parameter yung user input
-
-	void recursionTest(int userInput) {
-		if (userInput == 1) {
-
-		}
-	}
-
+	
 	std::cout << "You selected: " << selectedDirectory << std::endl;
 
 	std::cout << "Please choose an option:" << std::endl;
@@ -65,7 +69,7 @@ int main() {
 
 	switch (option) {
 	case 1: {
-		
+
 		std::cout << "Subdirectories of " << selectedDirectory << ":\n";
 		for (const auto& entry : std::filesystem::directory_iterator(selectedDirectory)) {
 			if (std::filesystem::is_directory(entry)) {
@@ -89,6 +93,7 @@ int main() {
 		std::cout << "Invalid option. Please try again." << std::endl;
 	}
 	}
+
 
 	return 0;
 }

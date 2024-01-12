@@ -128,11 +128,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="MainDeclaration.h" />
+    <ClInclude Include="Header.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DirectoryRecursion.cpp" />
+    <ClCompile Include="ReturnDirectoryFunction.cpp" />
     <ClCompile Include="Sorter.cpp" />
-    <ClCompile Include="MainDeclaration.cpp" />
+    <ClCompile Include="ImageSorter.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

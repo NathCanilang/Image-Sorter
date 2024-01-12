@@ -38,6 +38,8 @@ int main() {
 	int partitionIndex;
 	std::cin >> partitionIndex;
 	selectedPartition = partitions[partitionIndex - 1];
+	directoryStack.push(partitions[partitionIndex - 1]);
+
 
 	system("CLS");
 	std::cout << "You selected: " << selectedPartition << std::endl;
@@ -58,6 +60,7 @@ int main() {
 	int directoryIndex;
 	std::cin >> directoryIndex;
 	selectedDirectory = directories[directoryIndex - 1];
+	directoryStack.push(directories[directoryIndex - 1]);
 
 	// Call the recursive function with the selected directory
 	directoryRecursion(selectedDirectory);

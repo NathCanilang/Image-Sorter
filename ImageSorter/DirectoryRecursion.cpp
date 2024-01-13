@@ -46,6 +46,7 @@ void directoryRecursion(const std::string& directoryPath) {
         }
         break;
     }
+
     case 2:
         std::cout << "You have selected this folder" << std::endl;
         break;

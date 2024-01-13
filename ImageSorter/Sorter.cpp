@@ -33,12 +33,13 @@ int main() {
 	for (int i = 0; i < partitions.size(); i++) {
 		std::cout << "[" << i + 1 << "] " << partitions[i] << std::endl;
 	}
+
 	std::cout << "Enter the number from the selection: ";
 
 	int partitionIndex;
 	std::cin >> partitionIndex;
 	selectedPartition = partitions[partitionIndex - 1];
-	directoryStack.push(partitions[partitionIndex - 1]);
+	directoryStack.push(selectedPartition);
 
 
 	system("CLS");

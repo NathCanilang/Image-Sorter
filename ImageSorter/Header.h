@@ -15,6 +15,6 @@ extern std::stack<std::string> directoryStack;
 
 void imageSorter(const std::string& IMAGE_DIRECTORY);
 void reverseImageSort(const std::string& SORTED_IMAGE_DIRECTORY);
-void directoryRecursion(const std::string& directoryPath);
+void directoryRecursion(const std::string& DIRECTORY_PATH);
 void push(const std::string& DIRECTORY);
 void pop();

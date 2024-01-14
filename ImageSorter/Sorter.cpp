@@ -1,18 +1,8 @@
 #include "Header.h"
 
-//all images are stored in a folder
-//once the said folder is selected 
-//iterate all the files and look for extensions of the files 
-//separate them based on their file extensions on a separate folder
-
-//New entry
-/* the user will give the folder that they want to be sorted
-but the file path of the sorted images is fixed*/
-
 std::string selectedDirectory;
 
 int main() {
-
 	/*std::string testPath1 = "A:\Screenshots";
 	std::string testPath2 = "A:\Sorted Images";
 	myMethod.imageSorter(testPath1);
@@ -85,6 +75,5 @@ int main() {
 			directoryRecursion(selectedDirectory);
 		}
 	}
-
 	return 0;
 }

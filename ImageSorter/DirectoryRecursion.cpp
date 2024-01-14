@@ -1,14 +1,16 @@
-	#include "Header.h"
+#include "Header.h"
 
-	void directoryRecursion(const std::string& DIRECTORY_PATH) {
+void directoryRecursion(const std::string& DIRECTORY_PATH) {
+	int userChoice;
+	std::vector<std::string> subdirectories;
+	int directoryIndex;
+
+	do {
 		std::cout << "Please choose an option:" << std::endl;
 		std::cout << "1] Open this directory" << std::endl;
 		std::cout << "2] Select this directory" << std::endl;
 
-		int userChoice;
 		std::cin >> userChoice;
-		std::vector<std::string> subdirectories;
-		int directoryIndex;
 
 		switch (userChoice) {
 		case 1: {
@@ -23,30 +25,36 @@
 				}
 			}
 			std::cout << "[" << count << "] Go back\n";
-			std::cout << "Please enter the number of the subdirectory you want to open: ";
 
-			std::cin >> directoryIndex;
-			if (directoryIndex >= 1 && directoryIndex <= subdirectories.size()) {
-				directoryStack.push(subdirectories[directoryIndex - 1]);
-				directoryRecursion(subdirectories[directoryIndex - 1]);
-			}
-			else if (directoryIndex == subdirectories.size() + 1) {
-				if (!directoryStack.empty()) {
-					directoryStack.pop();
+			do {
+				std::cout << "Please enter the number of the subdirectory you want to open: ";
+				std::cin >> directoryIndex;
+				
+				if (directoryIndex >= 1 && directoryIndex <= subdirectories.size()) {
+					directoryStack.push(subdirectories[directoryIndex - 1]);
+					directoryRecursion(subdirectories[directoryIndex - 1]);
+					break;
 				}
-				if (!directoryStack.empty()) {
-					std::string previousDirectory = directoryStack.top();
-					directoryRecursion(previousDirectory);
-					system("CLS");
+				else if (directoryIndex == subdirectories.size() + 1) {
+					if (!directoryStack.empty()) {
+						directoryStack.pop();
+					}
+					if (!directoryStack.empty()) {
+						std::string previousDirectory = directoryStack.top();
+						directoryRecursion(previousDirectory);
+						system("CLS");
+					}
+					else {
+						std::cout << "No previous directory to go back to.\n";
+					}
+					break;
 				}
 				else {
-					std::cout << "No previous directory to go back to.\n";
+					std::cout << "Invalid option. Please try again." << std::endl;
 				}
-			}
-			else {
-				std::cout << "Invalid option. Please try again." << std::endl;
-			}
-			break;
+			} while (true);
+
+			return;
 		}
 
 		case 2: {
@@ -55,6 +63,7 @@
 			if (userChoice == 1) {
 				imageSorter(DIRECTORY_PATH);
 				system("CLS");
+				return;  // Exit the loop after successful operation
 			}
 			else if (userChoice != 2) {
 				std::cout << "Invalid Choice. Try again" << std::endl;
@@ -65,4 +74,8 @@
 		default:
 			std::cout << "Invalid option. Please try again." << std::endl;
 		}
-	}
+	} while (userChoice < 1 || userChoice > 2);
+}
+
+
+

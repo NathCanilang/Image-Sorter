@@ -9,6 +9,7 @@
 #include <Windows.h>
 #include <stdlib.h>
 #include <stack>
+#include <limits>
 
 extern std::string selectedDirectory;
 extern std::stack<std::string> directoryStack;

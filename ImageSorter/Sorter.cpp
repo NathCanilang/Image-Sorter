@@ -3,11 +3,7 @@
 std::string selectedDirectory;
 
 int main() {
-	/*std::string testPath1 = "A:\Screenshots";
-	std::string testPath2 = "A:\Sorted Images";
-	myMethod.imageSorter(testPath1);
-	myMethod.reverseImageSort(testPath2);*/
-
+	
 	DWORD driveMask = GetLogicalDrives();
 	std::vector<std::string> partitions;
 

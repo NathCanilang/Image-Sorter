@@ -6,12 +6,16 @@
 #include <string>
 #include <cstdio>
 #include <set>
-#include<Windows.h>
+#include <Windows.h>
 #include <stdlib.h>
+#include <stack>
+#include <limits>
 
 extern std::string selectedDirectory;
+extern std::stack<std::string> directoryStack;
 
 void imageSorter(const std::string& IMAGE_DIRECTORY);
 void reverseImageSort(const std::string& SORTED_IMAGE_DIRECTORY);
-void directoryRecursion(const std::string& directoryPath);
-void ReturnDirectoryOnce();
+void directoryRecursion(const std::string& DIRECTORY_PATH);
+void push(const std::string& DIRECTORY);
+void pop();
